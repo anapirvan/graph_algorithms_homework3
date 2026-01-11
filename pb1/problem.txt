@@ -1,0 +1,9 @@
+Let T = (V, E) be a tree. T is called a β-tree if there exists a spanning graph H of T such
+that ∆(H) = δ(H) = 1.
+(a) Prove that a β-tree of order > 2 has two vertices of degree one each being adjacent to vertices
+of degree two.
+(b) Let T be a tree of order > 4. Show that if T is a β-tree, then there exists a β-tree T such that
+T can be obtained from T by adding two new adjacent vertices: one which will have degree two
+in T and one which will have degree one in T.
+(c) Is the converse of the above property true?
+(d) Devise an efficient algorithm for finding a maximum cardinality matching in a β-tree.
