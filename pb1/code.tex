@@ -1,0 +1,11 @@
+\subsection*{a)}
+Let $T$ be a $\beta$-tree of order $n > 2$.
+The condition $\Delta(H) = \delta(H) = 1$ for the partial graph $H$ implies that $H$ is a perfect matching of $T$. Thus, each vertex $v \in V$ is incident to exactly one edge from $E(H) \subseteq E(T)$. \
+Let $P = (v_0, v_1, v_2, \dots, v_k)$ be a longest path in $T$. The endpoints $v_0$ and $v_k$ are vertices of degree 1 (leaves), so we have $d_T(v_0) = 1$ and $d_T(v_k) = 1$. Since $v_0$ has only one neighbor ($v_1$), in order to be covered by the matching $H$, the edge $(v_0, v_1)$ must belong to $H$. Similarly, the edge $(v_{k-1}, v_k)$ must belong to $H$. \
+If $d_T(v_1) > 2$, then there would exist another neighbor $x \in V \setminus {v_0, v_2}$. We have two cases:
+\begin{itemize}
+\item $x$ is a leaf, which means it cannot be included in $H$, because $v_1$, its only neighbor, is already matched with $v_0$, contradicting the $\beta$-tree property.
+\item $x$ is not a leaf, which implies that $x$ has at least one more neighbor $y \neq v_1$. One can construct in $T$ a path $P'$ that starts from a leaf of the subtree containing $x$, passes through $x$ and $v_1$, and then continues along the path $P$ until reaching $v_k$. The path $P'$ is longer than $P$, contradicting the fact that $P$ is a longest path in $T$.
+\end{itemize}
+Therefore, the only neighbors of $v_1$ in $T$ are $v_0$ and $v_2$, hence $d_T(v_1) = 2$. Similarly, $d_T(v_{k-1}) = 2$. Thus, there exist 2 vertices of degree 1 ($v_0$ and $v_k$) adjacent to vertices of degree 2 ($v_1$ and $v_{k-1}$).
+
