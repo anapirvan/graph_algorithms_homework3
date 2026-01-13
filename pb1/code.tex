@@ -9,3 +9,8 @@ If $d_T(v_1) > 2$, then there would exist another neighbor $x \in V \setminus {v
 \end{itemize}
 Therefore, the only neighbors of $v_1$ in $T$ are $v_0$ and $v_2$, hence $d_T(v_1) = 2$. Similarly, $d_T(v_{k-1}) = 2$. Thus, there exist 2 vertices of degree 1 ($v_0$ and $v_k$) adjacent to vertices of degree 2 ($v_1$ and $v_{k-1}$).
 
+\subsection*{b)}
+From the previous point, we know that in any $\beta$-tree $T$ there exists a pair of adjacent vertices $v_0$ and $v_1$ with $d_T(v_0) = 1$ and $d_T(v_1) = 2$. \
+Let $\overline{T} = T \setminus {v_0, v_1}$ be the subgraph induced by $V(T) \setminus {v_0, v_1}$. Removing these two vertices does not disconnect the graph and does not introduce cycles, so $\overline{T}$ is a tree of order $|V(\overline{T})| > 2$. \
+Let $H$ be the perfect matching of $T$. Since $d_T(v_0)=1$ and $v_0$ must have degree 1 in $H$, we have $(v_0, v_1) \in E(H)$. Let $\overline{H}$ be the restriction of $H$ to $\overline{T}$. The edge set is $E(\overline{H}) = E(H) \setminus {(v_0, v_1)}$. Since $v_0$ and $v_1$ were removed together with the edge matching them, all the remaining vertices in $V(\overline{T})$ are still matched, therefore $\overline{H}$ is a perfect matching in $\overline{T}$ and $\overline{T}$ is a $\beta$-tree. \
+Therefore, $T$ is obtained from $\overline{T}$ by adding the vertices $v_0$ and $v_1$. The resulting degrees in $T$ are $d_T(v_0)=1$ and $d_T(v_1)=2$.
