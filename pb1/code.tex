@@ -17,3 +17,6 @@ Therefore, $T$ is obtained from $\overline{T}$ by adding the vertices $v_0$ and 
 
 \subsection*{c)}
 Starting from a $\beta$-tree $\overline{T}$, we may choose any vertex $u \in V(\overline{T})$ to which we attach the vertex $v_1$ that is adjacent to $v_0$ ($v_0, v_1 \notin V(\overline{T})$), obtaining a new graph $T$ in which $d_T(v_0) = 1$ and $d_T(v_1) = 2$. This construction does not introduce cycles and does not disconnect the graph, so $T$ is a tree. Moreover, the two added vertices extend the matching with the edge between them, so $T$ will have a perfect matching. \
+
+\subsection*{d)}
+An efficient algorithm for identifying the maximum-cardinality matching in a $\beta$-tree is Greedy-type and is based on a post-order traversal of the tree. When a node is reached, if it is unmatched, we match it with its parent, and the edge between the two nodes is added to the matching. This decision ensures local optimality because a leaf can only be matched with its parent. The algorithm has complexity $O(n)$, since each edge and each node is traversed exactly once.
