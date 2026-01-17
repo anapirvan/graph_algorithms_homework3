@@ -1,0 +1,14 @@
+2. The CS department, where there are p students (S = {s1, s2, . . . , sp}), wants to participate
+to a CS contest which has three sections: algorithmics, programming, and artificial intelligence. The
+department has to form three corresponding teams: at most k1 students for the algorithmic team,
+at most k2 students for the programming team, and at most k3 students for the artificial intelligence
+team. Each student si composes a list of teams to which she/he is interested to participate in.
+In the process of assigning students to teams the following constraints are to be considered:
+i) each student is assigned to exactly one team;
+(ii) the department has to respect each team capacity;
+(iii) a student cannot be assigned to a team which is not on his/her list.
+Help the department to solve this problem.
+(a) Define a network flow model to allocate the students to the teams.
+(b) Give and prove a characterization of the existence of a solution to this problem in terms of a
+maximum flow in the above network.
+(c) Estimate the time complexity of an appropriate algorithm.
