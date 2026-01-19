@@ -1,0 +1,8 @@
+\vspace{-2ex}
+\subsection*{a)}
+
+We define the transport network $R = (G, s, t, c)$, where $G = (V, E)$.\\
+$V$ consists of the set of students: one node for each student $s_1, s_2, \ldots, s_p$ and the set of teams: $A$--algorithms, $P$--programming, $I$--artificial intelligence.\\
+We draw an edge of capacity 1 from the source node $s$ to each node $s_i$, $i=\overline{1,p}$, to ensure that each student is assigned to exactly one team.\\
+From each student $s_i$ we draw an arc of capacity 1 to each team the student registered for, to ensure that a student can be assigned only to one of the teams they signed up for.\\
+From team $A$ we draw an arc of capacity $k_1$ to the destination node $t$, to ensure that at most $k_1$ students are part of the algorithms team. We proceed similarly for nodes $P$ and $I$, except that the capacity of the arc from $P$ to $t$ is $k_2$, and the capacity of the arc from $I$ to $t$ is $k_3$.
