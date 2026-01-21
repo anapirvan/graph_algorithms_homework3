@@ -6,3 +6,17 @@ $V$ consists of the set of students: one node for each student $s_1, s_2, \ldots
 We draw an edge of capacity 1 from the source node $s$ to each node $s_i$, $i=\overline{1,p}$, to ensure that each student is assigned to exactly one team.\\
 From each student $s_i$ we draw an arc of capacity 1 to each team the student registered for, to ensure that a student can be assigned only to one of the teams they signed up for.\\
 From team $A$ we draw an arc of capacity $k_1$ to the destination node $t$, to ensure that at most $k_1$ students are part of the algorithms team. We proceed similarly for nodes $P$ and $I$, except that the capacity of the arc from $P$ to $t$ is $k_2$, and the capacity of the arc from $I$ to $t$ is $k_3$.
+
+\subsection*{b)}
+
+The problem has a solution $\iff$ the value of the maximum flow is $p$.\
+
+"$\Rightarrow$":\
+The problem has a solution $\Rightarrow$ each student $s_i$ is assigned to exactly one team.
+To enforce this condition, we need the value of the flow leaving each node $s_i$ to be equal to 1 (thus ensuring that each student will belong to exactly one of the teams they registered for). Therefore, the value of the flow entering each node $s_i$ must also be 1, in order to satisfy the flow conservation property. Hence, since there are $p$ arcs leaving the source node $s$, the value of the maximum flow is $p$.\
+
+"$\Leftarrow$":\
+The value of the maximum flow is $p$ $\Rightarrow$ the value of the flow leaving the source node $s$ is $p$ $\Rightarrow$ all arcs leaving $s$ are saturated (there are $p$ arcs leaving $s$, each of capacity 1).\
+Since one of the flow properties states that the value of the flow entering a node must equal the value of the flow leaving that node, the value of the flow leaving each node $s_i$ must be 1 $\Rightarrow$ each student is assigned to exactly one team.\
+By the construction of the flow network, the team capacities are satisfied ($x_{At} \le k1$, $x_{Pt} \le k2$, $x_{It} \le k3$, $x_{At}+x_{Pt}+x_{It}=p$), and the condition that a student can only be assigned to a team they registered for is also respected.\
+Therefore, since all constraints in the problem statement are satisfied, the problem has a solution.
