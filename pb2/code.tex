@@ -20,3 +20,7 @@ The value of the maximum flow is $p$ $\Rightarrow$ the value of the flow leaving
 Since one of the flow properties states that the value of the flow entering a node must equal the value of the flow leaving that node, the value of the flow leaving each node $s_i$ must be 1 $\Rightarrow$ each student is assigned to exactly one team.\
 By the construction of the flow network, the team capacities are satisfied ($x_{At} \le k1$, $x_{Pt} \le k2$, $x_{It} \le k3$, $x_{At}+x_{Pt}+x_{It}=p$), and the condition that a student can only be assigned to a team they registered for is also respected.\
 Therefore, since all constraints in the problem statement are satisfied, the problem has a solution.
+
+\subsection*{c)}
+
+The problem can be solved using the Edmonds–Karp algorithm, which determines the maximum flow in a network with time complexity $O( |V|*|E|^2 )$.
