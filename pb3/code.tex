@@ -1,3 +1,15 @@
 \vspace{-2ex}
 \subsection*{1. Max-Flow Min-Cut Theorem:}
 The maximum value of a flow in the network $R=(G,s,t,c)$ is equal to the minimum capacity of a cut in $R$.
+
+\subsection*{2. Description of the algorithm:}
+\begin{itemize}
+\item \textbf{Step I.} We compute the maximum flow of the given network $R=(G,s,t,c)$ and we denote the value of the maximum flow by $f_{max}$.
+\item \textbf{Step II.} We construct the network $R_0$ in which the capacity of the edge $e_0$ (where $e_0=u_0v_0 \in E(G)$) will be $c(e_0)+\alpha$ (where $\alpha = \min{|c(e')-c(e'')| : e', e'' \in E(G), c(e') \ne c(e'')}$).
+\item \textbf{Step III.} We compute the maximum flow of the network $R_0$ and we denote the value of this flow by $f'{max}$.
+\item \textbf{Step IV.}
+\begin{itemize}
+\item If $f'{max} > f_{max}$ then $e_0 \in E(S,T)$ for any minimum cut $(S,T)$ of $R$, the answer is $true$.
+\item If $f'{max} = f{max}$ then the answer is $false$.
+\end{itemize}
+\end{itemize}
