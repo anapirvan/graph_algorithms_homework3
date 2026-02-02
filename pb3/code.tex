@@ -24,3 +24,23 @@ Assume that $e_0$ belongs to all minimum cuts in $R$. Let $C$ be the capacity of
 \item \textbf{“$\Rightarrow$” direction.}
 Assume, by contradiction, that $f'{max}>f{max}$ and that there exists a minimum cut $(S',T')$ in $R$ which does not contain the edge $e_0$. The capacity of the cut $(S',T')$ is equal to $f_{max}$. In the network $R_0$, the capacity of the edge $e_0$ increases, but the capacities of the other edges remain unchanged. Because $e_0 \notin E(S',T')$, the capacity of this cut will remain unchanged in $R_0$. The maximum flow is at most the capacity of any cut. Therefore $f'{max} \le C{R_0}(S',T')=C_R(S',T')=f_{max}$, i.e. $f'{max} \le f{max}$, which contradicts the assumption $f'{max} > f{max}$. Therefore the assumption was false, $e_0$ must belong to all minimum cuts.
 \end{itemize}
+
+\subsection*{4. Algorithm Complexity:}
+From the hypothesis it is specified that $max(c(e))=\mathcal{O}(1)$. We denote this constant by $k$.
+\begin{itemize}
+\item Computing $\alpha$:
+\begin{itemize}
+\item Traversing the edges: $\mathcal{O}(m)$.
+\item Sorting the unique capacities: $\mathcal{O}(k\times \log k)$, but $k$ is constant so in the end it remains $\mathcal{O}(1)$.
+\item Total cost: $\mathcal{O}(m)$.
+\end{itemize}
+\item Computing the maximum flow (Ford–Fulkerson algorithm):
+\begin{itemize}
+\item Cost of each iteration: Each increase of the current flow requires at most $2m$ inspections of arcs for labeling other nodes, therefore $\mathcal{O}(m)$.
+\item Number of iterations: If all capacities are integers, at most $v$ augmentations are needed ($v$ is the value of the maximum flow), thus $\mathcal{O}(mv)$.
+\item Flow upper bound: If $U$ is an upper bound of all arc capacities, then $v \le (n-1)U$ (this is an upper bound of the cut $({s}, V \setminus {s})$), therefore $\mathcal{O}(nmU)$.
+\item In the hypothesis it is stated that the capacity function is non-constant but bounded by a constant. Thus $U$ is a constant that does not depend on $n$ or $m$.
+\item Total cost: $\mathcal{O}(nm)$.
+\end{itemize}
+\item Final complexity: $\mathcal{O}(nm)$
+\end{itemize}
