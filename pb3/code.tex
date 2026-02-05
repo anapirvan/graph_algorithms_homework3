@@ -44,3 +44,33 @@ From the hypothesis it is specified that $max(c(e))=\mathcal{O}(1)$. We denote t
 \end{itemize}
 \item Final complexity: $\mathcal{O}(nm)$
 \end{itemize}
+
+\subsection*{5. The Algorithm (pseudocode):}
+\textbf{procedure} CheckCriticalEdge($G, c, s, t, e_0$)
+\begin{tabbing}
+\hspace{0.5cm} \= \hspace{0.5cm} \= \hspace{0.5cm} \= \kill
+\> // cap is the vector of capacities \\
+\>sort(cap) \\
+\>$\alpha \leftarrow \infty$ \\
+\> \textbf{for} ($i = 1, i < k$) \textbf{do} \\
+\> \> \textbf{if} ($cap_{i+1} - cap_i < \alpha$) \textbf{then} \\
+\> \> \> $\alpha \leftarrow cap_{i+1} - cap_i$ \\
+\> \> \textbf{end if} \\
+\> \textbf{end for} \\
+\\
+\> \textbf{if} ($\alpha = \infty$) \textbf{then} $\alpha \leftarrow 1$ \textbf{end if} \\
+\\
+\> // MaxFlow is the Ford–Fulkerson algorithm \\
+\> $f_{old\_max} \leftarrow$ MaxFlow($G, s, t, c$) \\
+\\
+\> $c(e_0) \leftarrow c(e_0) + \alpha$ \\
+\\
+\> $f_{new\_max} \leftarrow$ MaxFlow($G, s, t, c$) \\
+\\
+\> \textbf{if} ($f_{new\_max} > f_{old\_max}$) \textbf{then} \\
+\> \> \textbf{return} \textbf{TRUE} \\
+\> \textbf{else} \\
+\> \> \textbf{return} \textbf{FALSE} \\
+\> \textbf{end if} \\
+\textbf{end procedure}
+\end{tabbing}
