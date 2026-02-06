@@ -1,0 +1,6 @@
+4. Consider the following decision problem:
+NOC
+Instance: G = (V, E) a graph and p ∈ N.
+Question: Is there A ⊆ V such that |A| ⩽ p and G − A contains no induced odd cycles?
+Consider an instance for SM problem: a graph H and k ∈ N. Then build the a graph G = (V, E) and p ∈ N (an instance for NOC problem) in the following way: let n = |H| and X = {x1, x2, . . . , xn} a set of new vertices, V(G) = V (H) ∪ X, E(G) = E(H) ∪ {ux : u ∈ V (H), x ∈ X}, and p = n − k.
+By using this construction prove that NOC is a NP-complete problem.
