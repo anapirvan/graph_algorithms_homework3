@@ -1,0 +1,11 @@
+We will show that the problem \textbf{NOC} is NP-complete by proving that it belongs to the class NP and that it is NP-hard through a polynomial reduction from the problem \textbf{SM}.
+
+\textbf{NOC $\in$ NP:}
+Given a graph $G=(V,E)$ and a number $p$, we can verify in polynomial time whether there exists a set of nodes $A \subseteq V$ with $|A|\le p$ such that the graph $G-A$ does not contain induced odd cycles.
+The verification consists of:
+\begin{itemize}
+    \item checking the condition $|A|\le p$;
+    \item constructing the graph $G' = G-A$;
+    \item testing whether $G'$ is bipartite.
+\end{itemize}
+A graph is bipartite if and only if it contains no odd cycles, a property that can be checked in time $O(|V|+|E|)$ using BFS. It follows that the NOC problem belongs to the class NP.
