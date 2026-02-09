@@ -9,3 +9,13 @@ The verification consists of:
     \item testing whether $G'$ is bipartite.
 \end{itemize}
 A graph is bipartite if and only if it contains no odd cycles, a property that can be checked in time $O(|V|+|E|)$ using BFS. It follows that the NOC problem belongs to the class NP.
+
+\textbf{Reduction SM $\le_P$ NOC:}
+Consider a graph $H=(V(H),E(H))$ with $|V(H)|=n$ and a number $k$.
+We construct a graph $G$ as follows:
+\begin{itemize}
+\item we add a set of new nodes $X={x_1,\dots,x_n}$;
+\item we define $V(G)=V(H)\cup X$;
+\item we define $E(G)=E(H)\cup{ux \mid u\in V(H),,x\in X}$;
+\item we set $p=n-k$.
+\end{itemize}
