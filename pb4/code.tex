@@ -19,3 +19,21 @@ We construct a graph $G$ as follows:
 \item we define $E(G)=E(H)\cup{ux \mid u\in V(H),,x\in X}$;
 \item we set $p=n-k$.
 \end{itemize}
+
+\textbf{Proof of correctness of the reduction.}
+
+\textbf{"$\Rightarrow$"}
+If $H$ contains an independent set $S$ with $|S|=k$, we define $A = V(H)\setminus S$, thus $|A| = p$.
+In the graph $G-A$, the remaining nodes are those in $S \cup X$.
+Since $S$ and $X$ are independent sets, the only remaining edges are those between $S$ and $X$.
+Therefore, $G-A$ is bipartite.
+
+\textbf{"$\Leftarrow$"}
+Assume that there exists a set $A \subseteq V(G)$ with $|A| \le p$ such that $G-A$ is bipartite.
+Since $|X| = n$, there exists a node $x \in X \setminus A$.
+Let $S' = V(H) \setminus A$.
+If there were $u, v \in S'$ with $uv \in E(H)$, then the cycle $u - v - x - u$ would be an odd cycle in $G-A$, a contradiction.
+It follows that $S'$ is an independent set and
+\[
+|S'| = n - |A| \ge n - (n - k) = k.
+\]
